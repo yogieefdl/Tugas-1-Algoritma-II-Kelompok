@@ -1,0 +1,56 @@
+//David Arrown (227064516097)
+//Yogie Fadila Rahman(227064516090)
+//Shafira Kayla Azhari (227064516009)
+
+//TUGAS 1 ALGORITMA
+//NOMOR 1
+
+//Deklarasi pacakage untuk membuat sebuah program
+package algoritma_pemrograman_ii;
+//Mengimpor fungsi keyboard yang bisa digunakan untuk membuat program
+import java.util.Scanner;
+//Deklarasi nama program yang akan dibuat
+public class Tugas_1_Algo {
+
+    //entry point dari sebuah program jika tidak memiliki fungsi main program tidak akan berjalan
+    public static void main(String[] args) {
+    
+        //membuat scanner dengan nama key
+        Scanner key = new Scanner(System.in); 
+        //deklarasi variabel
+        int jumlah_mh;
+        //Tampilan output ke user
+        System.out.print("Berapa masukan nilai mahasiswa : ");
+        //scanner untuk menyimpan apa yang di ketik di variabel
+        jumlah_mh = key.nextInt();
+        
+        //membuat variabel
+        String[] nama = new String [jumlah_mh];
+        double[] nilai = new double [jumlah_mh];
+        double total = 0;
+        
+        //prose pengecekan
+        for (int i=0; i<jumlah_mh; i++){ /*untuk melakukan perulangan sebanyak jumlah mahasiswa dengan
+            -menginisialisasi sebuah variabel "i" dengan nilai awal 0, mengecek apakah "i" kurang dari junlah mh
+            dan melakukan penambahan satu pada "i" setiap kali perulangan selesai dieksekusi */
+            System.out.print("Masukan nama mahasiswa : "); /*Tampilan output ke user untuk meminta memasukan 
+            sebuah nilai dari keyboard*/
+            nama [i] = key.next(); //menyimpan nilai tersebut pada elemen array "nama" pada indeks "i" 
+            System.out.print("Masukan nilai mahasiswa : ");/*Tampilan output ke user untuk meminta memasukan 
+            sebuah nilai dari keyboard*/
+            nilai [i] = key.nextDouble();////menyimpan nilai tersebut pada elemen array "nilai" pada indeks "i"
+           
+            //untuk menambahkan nilai elemen array "nilai" pada indeks "i" ke dalam variabel "total"
+            total += nilai[i];
+        }
+        
+        //deklarasi variabel rata-rata
+        double rata2 = total/jumlah_mh; 
+        //menampilkan output akhir hasil perhitungan nilai total dari semua nilai mahasiswa yang telah dimasukkan
+        System.out.println("Total Nilai Mahasiswa : " + total);
+        //menampilan output akhir hasil perhitungan rata-rata dari semua nilai mhswa yg telah dimasukkan
+        System.out.println("Rata-Rata Nilai Mahasiswa : " + rata2);
+        
+    }
+    
+}
