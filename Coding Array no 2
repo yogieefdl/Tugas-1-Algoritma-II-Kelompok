@@ -1,0 +1,59 @@
+//David Arrown (227064516097)
+//Yogie Fadila Rahman(227064516090)
+//Shafira Kayla Azhari (227064516009)
+
+//TUGAS 1 ALGORITMA
+//NOMOR 2
+
+//Deklarasi package untuk membuat program
+package algoritma_pemrograman_ii;
+//Mengimpor fungsi keyboard yang bisa digunakan untuk membuat program
+import java.util.Scanner;
+//Deklarasi nama program yang akan dibuat
+public class Tugas2 {
+
+    //entry point dari sebuah program jika tidak memiliki fungsi main program tidak akan berjalan
+    public static void main(String[] args) {
+    
+    //membuat scanner dengan nama input    
+    Scanner input = new Scanner(System.in);
+    //Tampilan output ke user
+    System.out.print("Masukkan jumlah mahasiswa: ");
+    //deklarasi variabel dengan scanner untuk menyimpan apa yang di ketik di variabel
+    int jumlahMahasiswa = input.nextInt();
+
+    //mmebuat variabel
+    int[] no = new int[jumlahMahasiswa];
+    String[] nama = new String[jumlahMahasiswa];
+    int[] uts = new int[jumlahMahasiswa];
+    int[] uas = new int[jumlahMahasiswa];      
+    
+    //proses pengecekan
+    for (int i = 0; i < jumlahMahasiswa; i++) {/*untuk melakukan perulangan sebanyak jumlah mahasiswa dengan
+        -menginisialisasi sebuah variabel "i" dengan nilai awal 0, mengecek apakah "i" kurang dari junlah mh
+        dan melakukan penambahan satu pada "i" setiap kali perulangan selesai dieksekusi */
+        System.out.print("No: ");//Tampilan output ke user untuk meminta memasukan sebuah nilai dari keyboard
+        no[i] = input.nextInt();//menyimpan nilai tersebut pada elemen array "no" pada indeks "i"
+        input.nextLine(); // membersihkan input newline
+        System.out.print("Nama: ");//Tampilan output ke user untuk meminta memasukan sebuah nilai dari keyboard
+        nama[i] = input.nextLine();//menyimpan nilai tersebut pada elemen array "nama" pada indeks "i"
+        System.out.print("Nilai UTS: ");//Tampilan output ke user untuk meminta memasukan sebuah nilai dari keyboard
+        uts[i] = input.nextInt();//menyimpan nilai tersebut pada elemen array "uts" pada indeks "i"
+        System.out.print("Nilai UAS: ");//Tampilan output ke user untuk meminta memasukan sebuah nilai dari keyboard
+        uas[i] = input.nextInt();//menyimpan nilai tersebut pada elemen array "uas" pada indeks "i"
+    }
+    //Tampilan output ke user
+    System.out.println("No\tNama\tUTS\tUAS\tTotal\tRata-Rata");
+    System.out.println("================================================");
+    
+    //prose pengecekan terakhir untuk total dan rata-rata nilai
+    for (int i = 0; i < nama.length; i++) {
+    int total = uts[i] + uas[i];//deklarasi variabel total dimana total sama dengan nilai uts ditambah dengan nilai uas
+    double rata2 = total / 2.0;// deklarasi variabel rata-rata dimana rata-rata sana dengan total dibagi 2
+ 
+      
+    //Menampilkan output akhir isi Array
+    System.out.printf("%d\t%s\t%d\t%d\t%d\t%.1f\n", i+1, nama[i], uts[i], uas[i], total, rata2);
+    }
+  }
+}
